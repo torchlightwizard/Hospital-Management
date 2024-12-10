@@ -12,8 +12,8 @@ Room:
  - Pharmacy: [      Id,       Floor,                         Staff Id, Patient Id, Inventory Id]
  - Residential: [   Id, Type, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
  - Visitor:  [      Id, Type, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
- - Utility: [       Id, Name, Floor,                         Staff Id,             Inventory Id ,Utility Type, Utility Output Units]
- - Misc: [          Id, Name, Type,                          Staff Id, Patient Id, Inventory Id, Capacity, Area Units]
+ - Utility: [       Id, Name, Floor,                         Staff Id,             Inventory Id ,Utility Type, Utility Output Unit]
+ - Misc: [          Id, Name, Type,                          Staff Id, Patient Id, Inventory Id, Capacity, Area Unit]
 
 Consumable:
  - Consumable: [      Id, Pharmaceutical Id, Medical Supplies Id]
@@ -84,7 +84,7 @@ Document:
  - Prescription: [           Id,         Document Link, Approved By Id, Description, Date,                     Issuer Id, Patient Id                                                    Invoice Id]                                                
  - Prescription Expanded: [  Id,                                                                                                                                         Consumable Id,                         Prescription Id]
  - Consent Forms: [          Id, Name,   Document Link, Approved By Id, Description, Date                                 Patient Id, Report Id,                                                                Consenter Name, Consenter Profile Id]
- - Emergency Reports: [      Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,     Staff Id,  Patient Id, Report Id, Room Id,                                          Schedule Id, Critical Level]
+ - Emergency Reports: [      Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,     Staff Id,  Patient Id, Report Id, Room Id,                                          Schedule Id, Emergency Type, Surgery Type, Critical Level]
  - Patient Medical Records: [Id,         Document Link, Approved By Id, Description, Date,                                Patient Id,            Room Id,                                          Schedule Id, Inpatient, Diagnosis, Treatment, Additional Notes]
  - Lab Report: [             Id, Name,   Document Link, Approved By Id, Description, Test  Date, Result Date,             Patient Id,            Room Id, Inventory Id                             Schedule Id]                            
  - Report: [                 Id, Name,   Document Link, Approved By Id, Description, Date,                     Issuer Id]                                                                                       

@@ -9,13 +9,12 @@ Room:
  - Critical Level: 0
  - Intensive Care: T
  - Facilities List: [a, b]
- - Surgery Type: 
-
-
- - Surgical: [                  , Surgery Type, Attached Teaching Area]
- - Residential: [   Type,               ]
- - Visitor:  [      Type,               ]
- - Misc: [          Type,                          ,Area Units]
+ - Surgery Type: a
+ - Attached Teaching Area: T
+ - Type: a
+ - Utility Type: a
+ - Utility Output Unit: 0
+ - Area Unit: 0
 
 Consumable:
  - Consumable: [      Id, Pharmaceutical Id, Medical Supplies Id]
@@ -86,7 +85,7 @@ Document:
  - Prescription: [           Id,         Document Link, Approved By Id, Description, Date,                     Issuer Id, Patient Id                                                    Invoice Id]                                                
  - Prescription Expanded: [  Id,                                                                                                                                         Consumable Id,                         Prescription Id]
  - Consent Forms: [          Id, Name,   Document Link, Approved By Id, Description, Date                                 Patient Id, Report Id,                                                                Consenter Name, Consenter Profile Id]
- - Emergency Reports: [      Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,     Staff Id,  Patient Id, Report Id, Room Id,                                          Schedule Id, Critical Level]
+ - Emergency Reports: [      Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,     Staff Id,  Patient Id, Report Id, Room Id,                                          Schedule Id, Emergency Type, Surgery Type, Critical Level]
  - Patient Medical Records: [Id,         Document Link, Approved By Id, Description, Date,                                Patient Id,            Room Id,                                          Schedule Id, Inpatient, Diagnosis, Treatment, Additional Notes]
  - Lab Report: [             Id, Name,   Document Link, Approved By Id, Description, Test  Date, Result Date,             Patient Id,            Room Id, Inventory Id                             Schedule Id]                            
  - Report: [                 Id, Name,   Document Link, Approved By Id, Description, Date,                     Issuer Id]                                                                                       
