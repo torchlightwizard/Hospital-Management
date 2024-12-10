@@ -1,13 +1,26 @@
-Room:
- - Room: [          Id, Administrative Id, Doctor Id, Emergency Id, Inpatient Id, Outpatient Id, Diagnosis Id, Surgical Id, Treatment Id, Support Id, Pharmacy Id, Residential Id, Visitor Id, Utility Id, Misc Id]
- - Administrative: [Id, Name, Floor,                         Staff Id, Patient Id, Inventory Id, Executive Level, Department Id, ]
+Id: 0
+
+Name: a
+First Name: a
+Last Name: a
+
+Floor: 0
+Capacity: 0
+Availability: T
+Critical Level: 0
+Intensive Care: T
+Facilities List: [a, b]
+
+Description: a
+
+
  - Doctor: [        Id,       Floor,                         Staff Id, Patient Id, Inventory Id]
  - Emergency: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Critical Level, Description]
  - Inpatient: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Intensive Care, Description]
  - Outpatient: [    Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id]
- - Diagnosis: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Facilities List, Description]
+ - Diagnosis: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Diagnostic Facilities List, Description]
  - Surgical: [      Id, Name, Floor,           Availability, Staff Id, Patient Id, Inventory Id, Surgery Type, Attached Teaching Area]
- - Treatment: [     Id, Name, Floor, Capacity,               Staff Id, Patient Id, Inventory Id, Availability, Facilities List]
+ - Treatment: [     Id, Name, Floor, Capacity,               Staff Id, Patient Id, Inventory Id, Availability, Treatment Facilities List]
  - Support: [       Id, Name, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
  - Pharmacy: [      Id,       Floor,                         Staff Id, Patient Id, Inventory Id]
  - Residential: [   Id, Type, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
@@ -16,12 +29,12 @@ Room:
  - Misc: [          Id, Name, Type,                          Staff Id, Patient Id, Inventory Id, Capacity, Area Units]
 
 Consumable:
- - Consumable: [      Id, Pharmaceutical Id, Medical Supplies Id]
+ - Consumable: [      Id, ]
  - Pharmaceutical: [  Id, Name, Quantity, Purchase Date, Expiration Date, Pharmacy Id, Brand, Type, Volume Unit, Weight Unit, Package Size Unit]
  - Medical Supplies: [Id, Name, Quantity, Purchase Date, Expiration Date, Pharmacy Id]
 
 Inventory:
- - Inventory: [        Id, Edibles Id, Medical Equipment Id, Supplies Id, Electronic Id, Vehicle Id]
+ - Inventory: [        Id, ]
  - Edible: [           Id, Name, Purchase Date, Expiration Date, Quantity, Kitchen Id]
  - Medical Equipment: [Id, Name, Purchase Date, Expiration Date,           Room Id,    Availability, Maintenance Schedule Id, Maintenance Logs Id]
  - Supplies: [         Id, Name, Purchase Date, Expiration Date, Quantity]
@@ -43,7 +56,7 @@ Management:
  - Position: [     Id, Title, Description, Room Id,                                 Department Id, PayScale, Compensation, Clearance Level]
 
 Staff:
- - Staff: [              Id, Director Id, Administration Id, Doctors Id, Nurses Id, Medical Technicians Id, Therapists Id, Clinical Support Id, Non-Medical Support Id, Pharmacy Id, Transport Id, Teachers Id, Volunteers Id]
+ - Staff: [              Id, ]
  - Directors: [          Id, Profile Id, Position Id, Attendance Id, Active, Start Date, End Date]
  - Administration: [     Id, Profile Id, Position Id, Attendance Id, Active, Start Date, End Date,                 Medical]
  - Doctors: [            Id, Profile Id, Position Id, Attendance Id, Active, Start Date, End Date, Qualifications, Licenses,           Specializations]
@@ -70,7 +83,7 @@ Patients:
 
 Schedule:
  - Shift: [              Id, Start Date, End Date, Description, Shift Name]
- - Schedule: [           Id, Start Date, End Date, Description, Name, Shift Id, Staff Id, General Id, Appointments Id, Emergency Id, Maintenance Id, Vahicle Id]
+ - Schedule: [           Id, Start Date, End Date, Description, Name, , Staff Id, General Id, Appointments Id, Emergency Id, Maintenance Id, Vahicle Id]
  - General: [            Id, Room Id,              Patient Id]
  - Appointments: [       Id, Room Id,              Patient Id]
  - Emergency: [          Id, Room Id,              Patient Id]
