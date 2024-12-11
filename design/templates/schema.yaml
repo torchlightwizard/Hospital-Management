@@ -12,7 +12,7 @@ Room:
  - Pharmacy: [      Id,       Floor,                         Staff Id, Patient Id, Inventory Id]
  - Residential: [   Id, Type, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
  - Visitor:  [      Id, Type, Floor, Capacity,               Staff Id, Patient Id, Inventory Id]
- - Utility: [       Id, Name, Floor,                         Staff Id,             Inventory Id ,Utility Type, Utility Output Unit]
+ - Utility: [       Id, Name, Floor,                         Staff Id,             Inventory Id, Utility Type, Utility Output Unit]
  - Misc: [          Id, Name, Type,                          Staff Id, Patient Id, Inventory Id, Capacity, Area Unit]
 
 Consumable:
@@ -31,16 +31,16 @@ Inventory:
 Budget:
  - Budget: [           Id, Total Amount, Allocated Amount, Remaining Amount, Year, Description]
  - Department Budget: [Id, Total Amount, Allocated Amount, Remaining Amount, Year, Description,                   Department Id]
- - Expense: [          Id, Amount,                                           Date, Description, Type, Invoice Id, Department Id, Approved By, Cashflow Id]
- - Compensations: [    Id, Amount,                                           Date, Description, Type, Invoice Id, Staff Id,      Approved By, Cashflow Id]
+ - Expense: [          Id, Amount,                                           Date, Description, Type, Invoice Id, Department Id, Approved By Id, Cashflow Id]
+ - Compensations: [    Id, Amount,                                           Date, Description, Type, Invoice Id, Staff Id,      Approved By Id, Cashflow Id]
  - Revenue: [          Id, Amount,                                           Date, Description, Type, Invoice Id, Department Id,              Cashflow Id]
- - Cash Flow: [        Id, Amount, Balance                                   Date,              Type, Invoice Id,                Record Editor,           Flow]
+ - Cash Flow: [        Id, Amount, Balance,                                  Date,              Type, Invoice Id,                Record Editor Id,           Flow]
 
 Management:
  - Board: [        Id, Name,  Description, Room Id, Start Date, End Date]
  - Research Team: [Id, Name,  Description, Room Id, Start Date, End Date, Report Id, Department Id]
  - Department: [   Id, Name,  Description, Room Id]
- - Position: [     Id, Title, Description, Room Id,                                 Department Id, PayScale, Compensation, Clearance Level]
+ - Position: [     Id, Name, Description, Room Id,                                 Department Id, PayScale, Compensation, Clearance Level]
 
 Staff:
  - Staff: [              Id, Director Id, Administration Id, Doctors Id, Nurses Id, Medical Technicians Id, Therapists Id, Clinical Support Id, Non-Medical Support Id, Pharmacy Id, Transport Id, Teachers Id, Volunteers Id]
@@ -79,14 +79,14 @@ Schedule:
 
 Document:
  - Directives: [             Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,                            Report Id]
- - Invoice: [                Id, Name,   Document Link, Approved By Id, Description, Issue Date, Payment Date, Issuer Id                                                                                        Currency, Total Amount, Tax Amount, Issuer Name, Recipient Id, Recipient Name, Payment Status]
+ - Invoice: [                Id, Name,   Document Link, Approved By Id, Description, Issue Date, Payment Date, Issuer Id,                                                                                       Currency, Total Amount, Tax Amount, Issuer Name, Recipient Id, Recipient Name, Payment Status]
  - Invoice Expanded: [       Id,                                                                                                                          Inventory Id,  Consumable Id, Invoice Id]             
- - Prescription: [           Id,         Document Link, Approved By Id, Description, Date,                     Issuer Id, Patient Id                                                    Invoice Id]                                                
+ - Prescription: [           Id,         Document Link, Approved By Id, Description, Date,                     Issuer Id, Patient Id,                                                   Invoice Id]                                                
  - Prescription Expanded: [  Id,                                                                                                                                         Consumable Id,                         Prescription Id]
- - Consent Forms: [          Id, Name,   Document Link, Approved By Id, Description, Date                                 Patient Id, Report Id,                                                                Consenter Name, Consenter Profile Id]
+ - Consent Forms: [          Id, Name,   Document Link, Approved By Id, Description, Date,                                Patient Id, Report Id,                                                                Consenter Name, Consenter Profile Id]
  - Emergency Reports: [      Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,     Staff Id,  Patient Id, Report Id, Room Id,                                          Schedule Id, Emergency Type, Surgery Type, Critical Level]
  - Patient Medical Records: [Id,         Document Link, Approved By Id, Description, Date,                                Patient Id,            Room Id,                                          Schedule Id, Inpatient, Diagnosis, Treatment, Additional Notes]
- - Lab Report: [             Id, Name,   Document Link, Approved By Id, Description, Test  Date, Result Date,             Patient Id,            Room Id, Inventory Id                             Schedule Id]                            
+ - Lab Report: [             Id, Name,   Document Link, Approved By Id, Description, Test  Date, Result Date,             Patient Id,            Room Id, Inventory Id,                            Schedule Id]                            
  - Report: [                 Id, Name,   Document Link, Approved By Id, Description, Date,                     Issuer Id]                                                                                       
  - Insurance: [              Id, Name,   Document Link, Approved By Id, Description, Start Date, End Date,                            Report Id,                                                                Approval Date, Policy Type, Holder Profile Id, Provider Name, Provider Representative Name, Provider Representative Profile Id, Coverage Amount, Premium Amount, Claim Limit, Status]
  - Attendance: [             Id,         Document Link, Approved By Id,              Start Date, End Date,                                                                                                      Schedule Id, Attendance]

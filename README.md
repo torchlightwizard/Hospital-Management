@@ -15,3 +15,8 @@ The folder hierarchy is as follows:<br>
 # Schema
 
 # Notes
+
+# Workflow
+ 1. The schema and tables are implemented in `/design/templates/schema.yaml`.
+ 2. The `/utils/yamlToJson.py` is used to convert `/design/templates/schema.yaml` to json for ease of Editing data types.
+ 3. The `/utils/jsonToSql.py` is used to convert the `/design/templates/schema.json` file into `/design/schema/schema.sql` queries to generate the database.
