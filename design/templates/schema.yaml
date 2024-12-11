@@ -1,6 +1,6 @@
 Room:
  - Room: [          Id, Administrative Id, Doctor Id, Emergency Id, Inpatient Id, Outpatient Id, Diagnosis Id, Surgical Id, Treatment Id, Support Id, Pharmacy Id, Residential Id, Visitor Id, Utility Id, Misc Id]
- - Administrative: [Id, Name, Floor,                         Staff Id, Patient Id, Inventory Id, Executive Level, Department Id, ]
+ - Administrative: [Id, Name, Floor,                         Staff Id, Patient Id, Inventory Id, Executive Level, Department Id]
  - Doctor: [        Id,       Floor,                         Staff Id, Patient Id, Inventory Id]
  - Emergency: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Critical Level, Description]
  - Inpatient: [     Id, Name, Floor, Capacity, Availability, Staff Id, Patient Id, Inventory Id, Intensive Care, Description]

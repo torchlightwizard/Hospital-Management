@@ -1,0 +1,780 @@
+{
+    "Room": {
+     "Room": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Administrative Id": "SERIAL",
+      "Doctor Id": "SERIAL",
+      "Emergency Id": "SERIAL",
+      "Inpatient Id": "SERIAL",
+      "Outpatient Id": "SERIAL",
+      "Diagnosis Id": "SERIAL",
+      "Surgical Id": "SERIAL",
+      "Treatment Id": "SERIAL",
+      "Support Id": "SERIAL",
+      "Pharmacy Id": "SERIAL",
+      "Residential Id": "SERIAL",
+      "Visitor Id": "SERIAL",
+      "Utility Id": "SERIAL",
+      "Misc Id": "SERIAL"
+     },
+     "Administrative": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Executive Level": "INTEGER",
+      "Department Id": "SERIAL"
+     },
+     "Doctor": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Floor": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Emergency": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Availability": "BOOLEAN",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Critical Level": "INTEGER",
+      "Description": "TEXT"
+     },
+     "Inpatient": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Availability": "BOOLEAN",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Intensive Care": "BOOLEAN",
+      "Description": "TEXT"
+     },
+     "Outpatient": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Availability": "BOOLEAN",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Diagnosis": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Availability": "BOOLEAN",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Facilities List": "TEXT[]",
+      "Description": "TEXT"
+     },
+     "Surgical": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Availability": "BOOLEAN",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Surgery Type": "VARCHAR(255)",
+      "Attached Teaching Area": "BOOLEAN"
+     },
+     "Treatment": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Availability": "BOOLEAN",
+      "Facilities List": "TEXT[]"
+     },
+     "Support": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Pharmacy": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Floor": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Residential": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Type": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Visitor": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Type": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Capacity": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL"
+     },
+     "Utility": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Floor": "INTEGER",
+      "Staff Id": "SERIAL",
+      "Inventory Id": "SERIAL",
+      "Utility Type": "VARCHAR(255)",
+      "Utility Output Unit": "NUMERIC(5, 2)"
+     },
+     "Misc": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Type": "VARCHAR(255)",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Inventory Id": "SERIAL",
+      "Capacity": "INTEGER",
+      "Area Unit": "NUMERIC(5, 2)"
+     }
+    },
+    "Consumable": {
+     "Consumable": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Pharmaceutical Id": "SERIAL",
+      "Medical Supplies Id": "SERIAL"
+     },
+     "Pharmaceutical": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Quantity": "INTEGER",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Pharmacy Id": "SERIAL",
+      "Brand": "TEXT",
+      "Type": "VARCHAR(255)",
+      "Volume Unit": "NUMERIC(5, 2)",
+      "Weight Unit": "NUMERIC(5, 2)",
+      "Package Size Unit": "NUMERIC(5, 2)"
+     },
+     "Medical Supplies": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Quantity": "INTEGER",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Pharmacy Id": "SERIAL"
+     }
+    },
+    "Inventory": {
+     "Inventory": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Edibles Id": "SERIAL",
+      "Medical Equipment Id": "SERIAL",
+      "Supplies Id": "SERIAL",
+      "Electronic Id": "SERIAL",
+      "Vehicle Id": "SERIAL"
+     },
+     "Edible": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Quantity": "INTEGER",
+      "Kitchen Id": "SERIAL"
+     },
+     "Medical Equipment": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Room Id": "SERIAL",
+      "Availability": "BOOLEAN",
+      "Maintenance Schedule Id": "SERIAL NOT NULL",
+      "Maintenance Logs Id": "SERIAL"
+     },
+     "Supplies": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Quantity": "INTEGER"
+     },
+     "Electronic": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Expiration Date": "TIMESTAMP NOT NULL",
+      "Room Id": "SERIAL",
+      "Medical": "BOOLEAN"
+     },
+     "Vehicle": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Type": "VARCHAR(255)",
+      "Purchase Date": "TIMESTAMP NOT NULL",
+      "Room Id": "SERIAL",
+      "Availability": "BOOLEAN",
+      "Maintenance Schedule Id": "SERIAL NOT NULL",
+      "Maintenance Logs Id": "SERIAL",
+      "Model": "TEXT",
+      "Purpose": "VARCHAR(255)",
+      "Capacity": "INTEGER"
+     }
+    },
+    "Budget": {
+     "Budget": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Total Amount": "NUMERIC(12, 2) NOT NULL",
+      "Allocated Amount": "NUMERIC(12, 2) NOT NULL",
+      "Remaining Amount": "NUMERIC(12, 2) NOT NULL",
+      "Year": "INTEGER",
+      "Description": "TEXT"
+     },
+     "Department Budget": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Total Amount": "NUMERIC(12, 2) NOT NULL",
+      "Allocated Amount": "NUMERIC(12, 2) NOT NULL",
+      "Remaining Amount": "NUMERIC(12, 2) NOT NULL",
+      "Year": "INTEGER",
+      "Description": "TEXT",
+      "Department Id": "SERIAL"
+     },
+     "Expense": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Amount": "NUMERIC(12, 2) NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Description": "TEXT",
+      "Type": "VARCHAR(255)",
+      "Invoice Id": "SERIAL",
+      "Department Id": "SERIAL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Cashflow Id": "SERIAL"
+     },
+     "Compensations": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Amount": "NUMERIC(12, 2) NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Description": "TEXT",
+      "Type": "VARCHAR(255)",
+      "Invoice Id": "SERIAL",
+      "Staff Id": "SERIAL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Cashflow Id": "SERIAL"
+     },
+     "Revenue": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Amount": "NUMERIC(12, 2) NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Description": "TEXT",
+      "Type": "VARCHAR(255)",
+      "Invoice Id": "SERIAL",
+      "Department Id": "SERIAL",
+      "Cashflow Id": "SERIAL"
+     },
+     "Cash Flow": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Amount": "NUMERIC(12, 2) NOT NULL",
+      "Balance": "NUMERIC(12, 2) NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Type": "VARCHAR(255)",
+      "Invoice Id": "SERIAL",
+      "Record Editor Id": "SERIAL",
+      "Flow": "VARCHAR(255)"
+     }
+    },
+    "Management": {
+     "Board": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Description": "TEXT",
+      "Room Id": "SERIAL",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL"
+     },
+     "Research Team": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Description": "TEXT",
+      "Room Id": "SERIAL",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Report Id": "SERIAL",
+      "Department Id": "SERIAL"
+     },
+     "Department": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Description": "TEXT",
+      "Room Id": "SERIAL"
+     },
+     "Position": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Description": "TEXT",
+      "Room Id": "SERIAL",
+      "Department Id": "SERIAL",
+      "PayScale": "INTEGER",
+      "Compensation": "NUMERIC(8, 2) NOT NULL",
+      "Clearance Level": "INTEGER"
+     }
+    },
+    "Staff": {
+     "Staff": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Director Id": "SERIAL",
+      "Administration Id": "SERIAL",
+      "Doctors Id": "SERIAL",
+      "Nurses Id": "SERIAL",
+      "Medical Technicians Id": "SERIAL",
+      "Therapists Id": "SERIAL",
+      "Clinical Support Id": "SERIAL",
+      "Non-Medical Support Id": "SERIAL",
+      "Pharmacy Id": "SERIAL",
+      "Transport Id": "SERIAL",
+      "Teachers Id": "SERIAL",
+      "Volunteers Id": "SERIAL"
+     },
+     "Directors": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL"
+     },
+     "Administration": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Medical": "BOOLEAN"
+     },
+     "Doctors": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Qualifications": "TEXT[]",
+      "Licenses": "TEXT[]",
+      "Specializations": "TEXT[]"
+     },
+     "Nurses": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Licenses": "TEXT[]",
+      "Trainings": "TEXT[]"
+     },
+     "Medical Technicians": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Licenses": "TEXT[]"
+     },
+     "Therapists": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Qualifications": "TEXT[]",
+      "Licenses": "TEXT[]"
+     },
+     "Clinical Support": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Licenses": "TEXT[]"
+     },
+     "Non-Medical Support": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL"
+     },
+     "Pharmacy": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Licenses": "TEXT[]"
+     },
+     "Transport": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Licenses": "TEXT[]"
+     },
+     "Teachers": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Qualifications": "TEXT[]",
+      "Trainings": "TEXT[]",
+      "Specializations": "TEXT[]"
+     },
+     "Volunteers": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Position Id": "SERIAL NOT NULL",
+      "Attendance Id": "SERIAL",
+      "Active": "BOOLEAN",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL"
+     }
+    },
+    "Profile": {
+     "Profile": {
+      "Id": "SERIAL PRIMARY KEY",
+      "First Name": "VARCHAR(255)",
+      "Last Name": "VARCHAR(255)",
+      "Contact Number": "VARCHAR(15)",
+      "Emergency Contact Number": "VARCHAR(15)",
+      "Address 1": "TEXT",
+      "Address 2": "TEXT",
+      "Email": "VARCHAR(30)"
+     }
+    },
+    "Patients": {
+     "Patient": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Profile Id": "SERIAL",
+      "Inpatient": "BOOLEAN NOT NULL"
+     },
+     "Consent Forms": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Patient Id": "SERIAL NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Consent Form Id": "SERIAL"
+     },
+     "Prescriptions": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Patient Id": "SERIAL NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Invoice Id": "SERIAL"
+     },
+     "Invoice": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Patient Id": "SERIAL NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Invoice Id": "SERIAL"
+     },
+     "Lab Reports": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Patient Id": "SERIAL NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Lap Report Id": "SERIAL"
+     },
+     "Medical Records": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Patient Id": "SERIAL NOT NULL",
+      "Date": "TIMESTAMP NOT NULL",
+      "Medical Record Id": "SERIAL NOT NULL"
+     }
+    },
+    "Schedule": {
+     "Shift": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Description": "TEXT",
+      "Shift Name": "VARCHAR(255)"
+     },
+     "Schedule": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Description": "TEXT",
+      "Name": "VARCHAR(255)",
+      "Shift Id": "SERIAL",
+      "Staff Id": "SERIAL",
+      "General Id": "SERIAL",
+      "Appointments Id": "SERIAL",
+      "Emergency Id": "SERIAL",
+      "Maintenance Id": "SERIAL",
+      "Vahicle Id": "SERIAL"
+     },
+     "General": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Room Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL"
+     },
+     "Appointments": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Room Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL"
+     },
+     "Emergency": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Room Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL"
+     },
+     "Maintenance": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Room Id": "SERIAL",
+      "Inventory Id": "SERIAL"
+     },
+     "Vehicle": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Purpose": "VARCHAR(255)",
+      "Inventory Id": "SERIAL"
+     }
+    },
+    "Document": {
+     "Directives": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Report Id": "SERIAL"
+     },
+     "Invoice": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Issue Date": "TIMESTAMP NOT NULL",
+      "Payment Date": "TIMESTAMP NOT NULL",
+      "Issuer Id": "SERIAL",
+      "Currency": "VARCHAR(5)",
+      "Total Amount": "NUMERIC(12, 2) NOT NULL",
+      "Tax Amount": "NUMERIC(12, 2) NOT NULL",
+      "Issuer Name": "VARCHAR(255)",
+      "Recipient Id": "SERIAL",
+      "Recipient Name": "VARCHAR(255)",
+      "Payment Status": "BOOLEAN"
+     },
+     "Invoice Expanded": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Inventory Id": "SERIAL",
+      "Consumable Id": "SERIAL",
+      "Invoice Id": "SERIAL"
+     },
+     "Prescription": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Date": "TIMESTAMP NOT NULL",
+      "Issuer Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Invoice Id": "SERIAL"
+     },
+     "Prescription Expanded": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Consumable Id": "SERIAL",
+      "Prescription Id": "SERIAL"
+     },
+     "Consent Forms": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Date": "TIMESTAMP NOT NULL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Report Id": "SERIAL",
+      "Consenter Name": "VARCHAR(255)",
+      "Consenter Profile Id": "SERIAL"
+     },
+     "Emergency Reports": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Report Id": "SERIAL",
+      "Room Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL",
+      "Emergency Type": "VARCHAR(255)",
+      "Surgery Type": "VARCHAR(255)",
+      "Critical Level": "INTEGER"
+     },
+     "Patient Medical Records": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Date": "TIMESTAMP NOT NULL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Room Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL",
+      "Inpatient": "BOOLEAN NOT NULL",
+      "Diagnosis": "TEXT",
+      "Treatment": "TEXT",
+      "Additional Notes": "TEXT"
+     },
+     "Lab Report": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Test  Date": "TIMESTAMP NOT NULL",
+      "Result Date": "TIMESTAMP NOT NULL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Room Id": "SERIAL",
+      "Inventory Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL"
+     },
+     "Report": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Date": "TIMESTAMP NOT NULL",
+      "Issuer Id": "SERIAL"
+     },
+     "Insurance": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Report Id": "SERIAL",
+      "Approval Date": "TIMESTAMP NOT NULL",
+      "Policy Type": "VARCHAR(255)",
+      "Holder Profile Id": "SERIAL",
+      "Provider Name": "VARCHAR(255)",
+      "Provider Representative Name": "VARCHAR(255)",
+      "Provider Representative Profile Id": "SERIAL",
+      "Coverage Amount": "NUMERIC(12, 2) NOT NULL",
+      "Premium Amount": "NUMERIC(12, 2) NOT NULL",
+      "Claim Limit": "NUMERIC(12, 2)",
+      "Status": "TEXT"
+     },
+     "Attendance": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Schedule Id": "SERIAL NOT NULL",
+      "Attendance": "BOOLEAN"
+     },
+     "Contracts": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Staff Id": "SERIAL",
+      "Report Id": "SERIAL",
+      "Renew Date": "TIMESTAMP NOT NULL",
+      "Contract Type": "VARCHAR(255)",
+      "Status": "TEXT",
+      "Department Id": "SERIAL",
+      "Issuer Id": "SERIAL",
+      "Signee Id": "SERIAL",
+      "Payment Amount": "NUMERIC(12, 2) NOT NULL",
+      "Terms and Conditions Link": "TEXT NOT NULL"
+     },
+     "Meeting Minutes": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Agenda": "TEXT",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Staff Id": "SERIAL",
+      "Report Id": "SERIAL",
+      "Room Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL"
+     },
+     "Medical Equipment Logs": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Staff Id": "SERIAL",
+      "Patient Id": "SERIAL NOT NULL",
+      "Report Id": "SERIAL",
+      "Room Id": "SERIAL",
+      "Inventory Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL"
+     },
+     "Maintenance Logs": {
+      "Id": "SERIAL PRIMARY KEY",
+      "Name": "VARCHAR(255)",
+      "Document Link": "TEXT NOT NULL",
+      "Approved By Id": "SERIAL NOT NULL",
+      "Description": "TEXT",
+      "Start Date": "TIMESTAMP NOT NULL",
+      "End Date": "TIMESTAMP NOT NULL",
+      "Staff Id": "SERIAL",
+      "Report Id": "SERIAL",
+      "Room Id": "SERIAL",
+      "Inventory Id": "SERIAL",
+      "Schedule Id": "SERIAL NOT NULL"
+     }
+    }
+   }

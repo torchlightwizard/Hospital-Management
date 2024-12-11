@@ -1,0 +1,10 @@
+CREATE SCHEMA "Room";
+CREATE SCHEMA "Consumable";
+CREATE SCHEMA "Inventory";
+CREATE SCHEMA "Budget";
+CREATE SCHEMA "Management";
+CREATE SCHEMA "Staff";
+CREATE SCHEMA "Profile";
+CREATE SCHEMA "Patients";
+CREATE SCHEMA "Schedule";
+CREATE SCHEMA "Document";
