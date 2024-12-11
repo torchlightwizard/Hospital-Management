@@ -19,7 +19,7 @@ for sent in sentences:
         curr_cols = sent.split(":")[1].replace("[", "").replace("]", "").split(",")
         dic[curr_schema][curr_table] = {}
         for col in curr_cols:
-            dic[curr_schema][curr_table][col.strip()] = {}
+            dic[curr_schema][curr_table][col.strip()] = ""
 
 js = json.dumps(dic, indent=1)
 with open(output_path, "w") as file:
