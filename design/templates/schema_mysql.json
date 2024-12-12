@@ -1,780 +1,780 @@
 {
     "Room": {
-     "Room": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Administrative Id": "INT",
-      "Doctor Id": "INT",
-      "Emergency Id": "INT",
-      "Inpatient Id": "INT",
-      "Outpatient Id": "INT",
-      "Diagnosis Id": "INT",
-      "Surgical Id": "INT",
-      "Treatment Id": "INT",
-      "Support Id": "INT",
-      "Pharmacy Id": "INT",
-      "Residential Id": "INT",
-      "Visitor Id": "INT",
-      "Utility Id": "INT",
-      "Misc Id": "INT"
-     },
-     "Administrative": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Executive Level": "INT",
-      "Department Id": "INT"
-     },
-     "Doctor": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Floor": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Emergency": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Availability": "TINYINT(1)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Critical Level": "INT",
-      "Description": "TEXT"
-     },
-     "Inpatient": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Availability": "TINYINT(1)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Intensive Care": "TINYINT(1)",
-      "Description": "TEXT"
-     },
-     "Outpatient": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Availability": "TINYINT(1)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Diagnosis": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Availability": "TINYINT(1)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Facilities List": "JSON",
-      "Description": "TEXT"
-     },
-     "Surgical": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Availability": "TINYINT(1)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Surgery Type": "VARCHAR(255)",
-      "Attached Teaching Area": "TINYINT(1)"
-     },
-     "Treatment": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Availability": "TINYINT(1)",
-      "Facilities List": "JSON"
-     },
-     "Support": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Pharmacy": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Floor": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Residential": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Type": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Visitor": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Type": "VARCHAR(255)",
-      "Floor": "INT",
-      "Capacity": "INT",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT"
-     },
-     "Utility": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Floor": "INT",
-      "Staff Id": "INT",
-      "Inventory Id": "INT",
-      "Utility Type": "VARCHAR(255)",
-      "Utility Output Unit": "DECIMAL(5, 2)"
-     },
-     "Misc": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Type": "VARCHAR(255)",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Inventory Id": "INT",
-      "Capacity": "INT",
-      "Area Unit": "DECIMAL(5, 2)"
-     }
+        "Room": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Administrative Id": "INT",
+            "Doctor Id": "INT",
+            "Emergency Id": "INT",
+            "Inpatient Id": "INT",
+            "Outpatient Id": "INT",
+            "Diagnosis Id": "INT",
+            "Surgical Id": "INT",
+            "Treatment Id": "INT",
+            "Support Id": "INT",
+            "Pharmacy Id": "INT",
+            "Residential Id": "INT",
+            "Visitor Id": "INT",
+            "Utility Id": "INT",
+            "Misc Id": "INT"
+        },
+        "Administrative": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Executive Level": "INT",
+            "Department Id": "INT"
+        },
+        "Doctor": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Floor": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Emergency": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Availability": "TINYINT(1)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Critical Level": "INT",
+            "Description": "TEXT"
+        },
+        "Inpatient": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Availability": "TINYINT(1)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Intensive Care": "TINYINT(1)",
+            "Description": "TEXT"
+        },
+        "Outpatient": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Availability": "TINYINT(1)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Diagnosis": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Availability": "TINYINT(1)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Facilities List": "JSON",
+            "Description": "TEXT"
+        },
+        "Surgical": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Availability": "TINYINT(1)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Surgery Type": "VARCHAR(255)",
+            "Attached Teaching Area": "TINYINT(1)"
+        },
+        "Treatment": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Availability": "TINYINT(1)",
+            "Facilities List": "JSON"
+        },
+        "Support": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Pharmacy": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Floor": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Residential": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Type": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Visitor": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Type": "VARCHAR(255)",
+            "Floor": "INT",
+            "Capacity": "INT",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Utility": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Floor": "INT",
+            "Staff Id": "INT",
+            "Inventory Id": "INT",
+            "Utility Type": "INT",
+            "Utility Output Unit": "DECIMAL(5, 2)"
+        },
+        "Misc": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Type": "VARCHAR(255)",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Inventory Id": "INT",
+            "Capacity": "INT",
+            "Area Unit": "DECIMAL(5, 2)"
+        }
     },
     "Consumable": {
-     "Consumable": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Pharmaceutical Id": "INT",
-      "Medical Supplies Id": "INT"
-     },
-     "Pharmaceutical": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Quantity": "INT",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Pharmacy Id": "INT",
-      "Brand": "TEXT",
-      "Type": "VARCHAR(255)",
-      "Volume Unit": "DECIMAL(5, 2)",
-      "Weight Unit": "DECIMAL(5, 2)",
-      "Package Size Unit": "DECIMAL(5, 2)"
-     },
-     "Medical Supplies": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Quantity": "INT",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Pharmacy Id": "INT"
-     }
+        "Consumable": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Pharmaceutical Id": "INT",
+            "Medical Supplies Id": "INT"
+        },
+        "Pharmaceutical": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Quantity": "INT",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Pharmacy Id": "INT",
+            "Brand": "TEXT",
+            "Type": "VARCHAR(255)",
+            "Volume Unit": "DECIMAL(5, 2)",
+            "Weight Unit": "DECIMAL(5, 2)",
+            "Package Size Unit": "DECIMAL(5, 2)"
+        },
+        "Medical Supplies": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Quantity": "INT",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Pharmacy Id": "INT"
+        }
     },
     "Inventory": {
-     "Inventory": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Edibles Id": "INT",
-      "Medical Equipment Id": "INT",
-      "Supplies Id": "INT",
-      "Electronic Id": "INT",
-      "Vehicle Id": "INT"
-     },
-     "Edible": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Quantity": "INT",
-      "Kitchen Id": "INT"
-     },
-     "Medical Equipment": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Room Id": "INT",
-      "Availability": "TINYINT(1)",
-      "Maintenance Schedule Id": "INT NOT NULL",
-      "Maintenance Logs Id": "INT"
-     },
-     "Supplies": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Quantity": "INT"
-     },
-     "Electronic": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Expiration Date": "TIMESTAMP NOT NULL",
-      "Room Id": "INT",
-      "Medical": "TINYINT(1)"
-     },
-     "Vehicle": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Type": "VARCHAR(255)",
-      "Purchase Date": "TIMESTAMP NOT NULL",
-      "Room Id": "INT",
-      "Availability": "TINYINT(1)",
-      "Maintenance Schedule Id": "INT NOT NULL",
-      "Maintenance Logs Id": "INT",
-      "Model": "TEXT",
-      "Purpose": "VARCHAR(255)",
-      "Capacity": "INT"
-     }
+        "Inventory": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Edible Id": "INT",
+            "Medical Equipment Id": "INT",
+            "Supplies Id": "INT",
+            "Electronic Id": "INT",
+            "Vehicle Id": "INT"
+        },
+        "Edible": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Quantity": "INT",
+            "Room Id": "INT"
+        },
+        "Medical Equipment": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Room Id": "INT",
+            "Availability": "TINYINT(1)",
+            "Maintenance Schedule Id": "INT",
+            "Maintenance Logs Id": "INT"
+        },
+        "Supplies": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Quantity": "INT"
+        },
+        "Electronic": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Room Id": "INT",
+            "Medical": "TINYINT(1)"
+        },
+        "Vehicle": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Type": "VARCHAR(255)",
+            "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Room Id": "INT",
+            "Availability": "TINYINT(1)",
+            "Maintenance Schedule Id": "INT",
+            "Maintenance Logs Id": "INT",
+            "Model": "TEXT",
+            "Purpose": "VARCHAR(255)",
+            "Capacity": "INT"
+        }
     },
     "Budget": {
-     "Budget": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Total Amount": "DECIMAL(12, 2) NOT NULL",
-      "Allocated Amount": "DECIMAL(12, 2) NOT NULL",
-      "Remaining Amount": "DECIMAL(12, 2) NOT NULL",
-      "Year": "INT",
-      "Description": "TEXT"
-     },
-     "Department Budget": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Total Amount": "DECIMAL(12, 2) NOT NULL",
-      "Allocated Amount": "DECIMAL(12, 2) NOT NULL",
-      "Remaining Amount": "DECIMAL(12, 2) NOT NULL",
-      "Year": "INT",
-      "Description": "TEXT",
-      "Department Id": "INT"
-     },
-     "Expense": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Amount": "DECIMAL(12, 2) NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Description": "TEXT",
-      "Type": "VARCHAR(255)",
-      "Invoice Id": "INT",
-      "Department Id": "INT",
-      "Approved By Id": "INT NOT NULL",
-      "Cashflow Id": "INT"
-     },
-     "Compensations": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Amount": "DECIMAL(12, 2) NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Description": "TEXT",
-      "Type": "VARCHAR(255)",
-      "Invoice Id": "INT",
-      "Staff Id": "INT",
-      "Approved By Id": "INT NOT NULL",
-      "Cashflow Id": "INT"
-     },
-     "Revenue": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Amount": "DECIMAL(12, 2) NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Description": "TEXT",
-      "Type": "VARCHAR(255)",
-      "Invoice Id": "INT",
-      "Department Id": "INT",
-      "Cashflow Id": "INT"
-     },
-     "Cash Flow": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Amount": "DECIMAL(12, 2) NOT NULL",
-      "Balance": "DECIMAL(12, 2) NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Type": "VARCHAR(255)",
-      "Invoice Id": "INT",
-      "Record Editor Id": "INT",
-      "Flow": "VARCHAR(255)"
-     }
+        "Budget": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Total Amount": "DECIMAL(12, 2) NOT NULL",
+            "Allocated Amount": "DECIMAL(12, 2) NOT NULL",
+            "Remaining Amount": "DECIMAL(12, 2) NOT NULL",
+            "Year": "INT",
+            "Description": "TEXT"
+        },
+        "Department Budget": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Total Amount": "DECIMAL(12, 2) NOT NULL",
+            "Allocated Amount": "DECIMAL(12, 2) NOT NULL",
+            "Remaining Amount": "DECIMAL(12, 2) NOT NULL",
+            "Year": "INT",
+            "Description": "TEXT",
+            "Department Id": "INT"
+        },
+        "Expense": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Amount": "DECIMAL(12, 2) NOT NULL",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Description": "TEXT",
+            "Type": "VARCHAR(255)",
+            "Invoice Id": "INT",
+            "Department Id": "INT",
+            "Approved By Id": "INT NOT NULL",
+            "Cash Flow Id": "INT"
+        },
+        "Compensations": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Amount": "DECIMAL(12, 2) NOT NULL",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Description": "TEXT",
+            "Type": "VARCHAR(255)",
+            "Invoice Id": "INT",
+            "Staff Id": "INT",
+            "Approved By Id": "INT NOT NULL",
+            "Cash Flow Id": "INT"
+        },
+        "Revenue": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Amount": "DECIMAL(12, 2) NOT NULL",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Description": "TEXT",
+            "Type": "VARCHAR(255)",
+            "Invoice Id": "INT",
+            "Department Id": "INT",
+            "Cash Flow Id": "INT"
+        },
+        "Cash Flow": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Amount": "DECIMAL(12, 2) NOT NULL",
+            "Balance": "DECIMAL(12, 2) NOT NULL",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Type": "VARCHAR(255)",
+            "Invoice Id": "INT",
+            "Record Editor Id": "INT",
+            "Flow": "VARCHAR(255)"
+        }
     },
     "Management": {
-     "Board": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Description": "TEXT",
-      "Room Id": "INT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL"
-     },
-     "Research Team": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Description": "TEXT",
-      "Room Id": "INT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Report Id": "INT",
-      "Department Id": "INT"
-     },
-     "Department": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Description": "TEXT",
-      "Room Id": "INT"
-     },
-     "Position": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Description": "TEXT",
-      "Room Id": "INT",
-      "Department Id": "INT",
-      "PayScale": "INT",
-      "Compensation": "DECIMAL(8, 2) NOT NULL",
-      "Clearance Level": "INT"
-     }
+        "Board": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Description": "TEXT",
+            "Room Id": "INT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
+        },
+        "Research Team": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Description": "TEXT",
+            "Room Id": "INT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Report Id": "INT",
+            "Department Id": "INT"
+        },
+        "Department": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Description": "TEXT",
+            "Room Id": "INT"
+        },
+        "Position": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Description": "TEXT",
+            "Room Id": "INT",
+            "Department Id": "INT",
+            "PayScale": "INT",
+            "Compensation": "DECIMAL(8, 2) NOT NULL",
+            "Clearance Level": "INT"
+        }
     },
     "Staff": {
-     "Staff": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Director Id": "INT",
-      "Administration Id": "INT",
-      "Doctors Id": "INT",
-      "Nurses Id": "INT",
-      "Medical Technicians Id": "INT",
-      "Therapists Id": "INT",
-      "Clinical Support Id": "INT",
-      "Non-Medical Support Id": "INT",
-      "Pharmacy Id": "INT",
-      "Transport Id": "INT",
-      "Teachers Id": "INT",
-      "Volunteers Id": "INT"
-     },
-     "Directors": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL"
-     },
-     "Administration": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Medical": "TINYINT(1)"
-     },
-     "Doctors": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Qualifications": "JSON",
-      "Licenses": "JSON",
-      "Specializations": "JSON"
-     },
-     "Nurses": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Licenses": "JSON",
-      "Trainings": "JSON"
-     },
-     "Medical Technicians": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Licenses": "JSON"
-     },
-     "Therapists": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Qualifications": "JSON",
-      "Licenses": "JSON"
-     },
-     "Clinical Support": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Licenses": "JSON"
-     },
-     "Non-Medical Support": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL"
-     },
-     "Pharmacy": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Licenses": "JSON"
-     },
-     "Transport": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Licenses": "JSON"
-     },
-     "Teachers": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Qualifications": "JSON",
-      "Trainings": "JSON",
-      "Specializations": "JSON"
-     },
-     "Volunteers": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Position Id": "INT NOT NULL",
-      "Attendance Id": "INT",
-      "Active": "TINYINT(1)",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL"
-     }
+        "Staff": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Director Id": "INT",
+            "Administration Id": "INT",
+            "Doctor Id": "INT",
+            "Nurse Id": "INT",
+            "Medical Technician Id": "INT",
+            "Therapist Id": "INT",
+            "Clinical Support Id": "INT",
+            "Non-Medical Support Id": "INT",
+            "Pharmacy Id": "INT",
+            "Transport Id": "INT",
+            "Teacher Id": "INT",
+            "Volunteer Id": "INT"
+        },
+        "Director": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
+        },
+        "Administration": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Medical": "TINYINT(1)"
+        },
+        "Doctor": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Qualifications": "JSON",
+            "Licenses": "JSON",
+            "Specializations": "JSON"
+        },
+        "Nurse": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Licenses": "JSON",
+            "Trainings": "JSON"
+        },
+        "Medical Technician": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Licenses": "JSON"
+        },
+        "Therapist": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Qualifications": "JSON",
+            "Licenses": "JSON"
+        },
+        "Clinical Support": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Licenses": "JSON"
+        },
+        "Non-Medical Support": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
+        },
+        "Pharmacy": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Licenses": "JSON"
+        },
+        "Transport": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Licenses": "JSON"
+        },
+        "Teacher": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Qualifications": "JSON",
+            "Trainings": "JSON",
+            "Specializations": "JSON"
+        },
+        "Volunteer": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Position Id": "INT",
+            "Attendance Id": "INT",
+            "Active": "TINYINT(1)",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
+        }
     },
     "Profile": {
-     "Profile": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "First Name": "VARCHAR(255)",
-      "Last Name": "VARCHAR(255)",
-      "Contact Number": "VARCHAR(15)",
-      "Emergency Contact Number": "VARCHAR(15)",
-      "Address 1": "TEXT",
-      "Address 2": "TEXT",
-      "Email": "VARCHAR(30)"
-     }
+        "Profile": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "First Name": "VARCHAR(255)",
+            "Last Name": "VARCHAR(255)",
+            "Contact Number": "VARCHAR(15)",
+            "Emergency Contact Number": "VARCHAR(15)",
+            "Address 1": "TEXT",
+            "Address 2": "TEXT",
+            "Email": "VARCHAR(30)"
+        }
     },
-    "Patients": {
-     "Patient": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Profile Id": "INT",
-      "Inpatient": "TINYINT(1) NOT NULL"
-     },
-     "Consent Forms": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Patient Id": "INT NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Consent Form Id": "INT"
-     },
-     "Prescriptions": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Patient Id": "INT NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Invoice Id": "INT"
-     },
-     "Invoice": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Patient Id": "INT NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Invoice Id": "INT"
-     },
-     "Lab Reports": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Patient Id": "INT NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Lap Report Id": "INT"
-     },
-     "Medical Records": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Patient Id": "INT NOT NULL",
-      "Date": "TIMESTAMP NOT NULL",
-      "Medical Record Id": "INT NOT NULL"
-     }
+    "Patient": {
+        "Patient": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Profile Id": "INT",
+            "Inpatient": "TINYINT(1) NOT NULL"
+        },
+        "Consent Form": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Patient Id": "INT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Consent Form Id": "INT"
+        },
+        "Prescription": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Patient Id": "INT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Invoice Id": "INT"
+        },
+        "Invoice": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Patient Id": "INT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Invoice Id": "INT"
+        },
+        "Lab Report": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Patient Id": "INT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Lab Report Id": "INT"
+        },
+        "Medical Record": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Patient Id": "INT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Medical Record Id": "INT"
+        }
     },
     "Schedule": {
-     "Shift": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Description": "TEXT",
-      "Shift Name": "VARCHAR(255)"
-     },
-     "Schedule": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Description": "TEXT",
-      "Name": "VARCHAR(255)",
-      "Shift Id": "INT",
-      "Staff Id": "INT",
-      "General Id": "INT",
-      "Appointments Id": "INT",
-      "Emergency Id": "INT",
-      "Maintenance Id": "INT",
-      "Vahicle Id": "INT"
-     },
-     "General": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Room Id": "INT",
-      "Patient Id": "INT NOT NULL"
-     },
-     "Appointments": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Room Id": "INT",
-      "Patient Id": "INT NOT NULL"
-     },
-     "Emergency": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Room Id": "INT",
-      "Patient Id": "INT NOT NULL"
-     },
-     "Maintenance": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Room Id": "INT",
-      "Inventory Id": "INT"
-     },
-     "Vehicle": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Purpose": "VARCHAR(255)",
-      "Inventory Id": "INT"
-     }
+        "Shift": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Description": "TEXT",
+            "Shift Name": "VARCHAR(255)"
+        },
+        "Schedule": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Description": "TEXT",
+            "Name": "VARCHAR(255)",
+            "Shift Id": "INT",
+            "Staff Id": "INT",
+            "General Id": "INT",
+            "Appointment Id": "INT",
+            "Emergency Id": "INT",
+            "Maintenance Id": "INT",
+            "Vahicle Id": "INT"
+        },
+        "General": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Room Id": "INT",
+            "Patient Id": "INT"
+        },
+        "Appointment": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Room Id": "INT",
+            "Patient Id": "INT"
+        },
+        "Emergency": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Room Id": "INT",
+            "Patient Id": "INT"
+        },
+        "Maintenance": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Room Id": "INT",
+            "Inventory Id": "INT"
+        },
+        "Vehicle": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Inventory Id": "INT",
+            "Purpose": "VARCHAR(255)"
+        }
     },
     "Document": {
-     "Directives": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Report Id": "INT"
-     },
-     "Invoice": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Issue Date": "TIMESTAMP NOT NULL",
-      "Payment Date": "TIMESTAMP NOT NULL",
-      "Issuer Id": "INT",
-      "Currency": "VARCHAR(5)",
-      "Total Amount": "DECIMAL(12, 2) NOT NULL",
-      "Tax Amount": "DECIMAL(12, 2) NOT NULL",
-      "Issuer Name": "VARCHAR(255)",
-      "Recipient Id": "INT",
-      "Recipient Name": "VARCHAR(255)",
-      "Payment Status": "TINYINT(1)"
-     },
-     "Invoice Expanded": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Inventory Id": "INT",
-      "Consumable Id": "INT",
-      "Invoice Id": "INT"
-     },
-     "Prescription": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Date": "TIMESTAMP NOT NULL",
-      "Issuer Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Invoice Id": "INT"
-     },
-     "Prescription Expanded": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Consumable Id": "INT",
-      "Prescription Id": "INT"
-     },
-     "Consent Forms": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Date": "TIMESTAMP NOT NULL",
-      "Patient Id": "INT NOT NULL",
-      "Report Id": "INT",
-      "Consenter Name": "VARCHAR(255)",
-      "Consenter Profile Id": "INT"
-     },
-     "Emergency Reports": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Report Id": "INT",
-      "Room Id": "INT",
-      "Schedule Id": "INT NOT NULL",
-      "Emergency Type": "VARCHAR(255)",
-      "Surgery Type": "VARCHAR(255)",
-      "Critical Level": "INT"
-     },
-     "Patient Medical Records": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Date": "TIMESTAMP NOT NULL",
-      "Patient Id": "INT NOT NULL",
-      "Room Id": "INT",
-      "Schedule Id": "INT NOT NULL",
-      "Inpatient": "TINYINT(1) NOT NULL",
-      "Diagnosis": "TEXT",
-      "Treatment": "TEXT",
-      "Additional Notes": "TEXT"
-     },
-     "Lab Report": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Test  Date": "TIMESTAMP NOT NULL",
-      "Result Date": "TIMESTAMP NOT NULL",
-      "Patient Id": "INT NOT NULL",
-      "Room Id": "INT",
-      "Inventory Id": "INT",
-      "Schedule Id": "INT NOT NULL"
-     },
-     "Report": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Date": "TIMESTAMP NOT NULL",
-      "Issuer Id": "INT"
-     },
-     "Insurance": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Report Id": "INT",
-      "Approval Date": "TIMESTAMP NOT NULL",
-      "Policy Type": "VARCHAR(255)",
-      "Holder Profile Id": "INT",
-      "Provider Name": "VARCHAR(255)",
-      "Provider Representative Name": "VARCHAR(255)",
-      "Provider Representative Profile Id": "INT",
-      "Coverage Amount": "DECIMAL(12, 2) NOT NULL",
-      "Premium Amount": "DECIMAL(12, 2) NOT NULL",
-      "Claim Limit": "DECIMAL(12, 2)",
-      "Status": "TEXT"
-     },
-     "Attendance": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Schedule Id": "INT NOT NULL",
-      "Attendance": "TINYINT(1)"
-     },
-     "Contracts": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Staff Id": "INT",
-      "Report Id": "INT",
-      "Renew Date": "TIMESTAMP NOT NULL",
-      "Contract Type": "VARCHAR(255)",
-      "Status": "TEXT",
-      "Department Id": "INT",
-      "Issuer Id": "INT",
-      "Signee Id": "INT",
-      "Payment Amount": "DECIMAL(12, 2) NOT NULL",
-      "Terms and Conditions Link": "TEXT NOT NULL"
-     },
-     "Meeting Minutes": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Agenda": "TEXT",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Staff Id": "INT",
-      "Report Id": "INT",
-      "Room Id": "INT",
-      "Schedule Id": "INT NOT NULL"
-     },
-     "Medical Equipment Logs": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Staff Id": "INT",
-      "Patient Id": "INT NOT NULL",
-      "Report Id": "INT",
-      "Room Id": "INT",
-      "Inventory Id": "INT",
-      "Schedule Id": "INT NOT NULL"
-     },
-     "Maintenance Logs": {
-      "Id": "INT AUTO_INCREMENT PRIMARY KEY",
-      "Name": "VARCHAR(255)",
-      "Document Link": "TEXT NOT NULL",
-      "Approved By Id": "INT NOT NULL",
-      "Description": "TEXT",
-      "Start Date": "TIMESTAMP NOT NULL",
-      "End Date": "TIMESTAMP NOT NULL",
-      "Staff Id": "INT",
-      "Report Id": "INT",
-      "Room Id": "INT",
-      "Inventory Id": "INT",
-      "Schedule Id": "INT NOT NULL"
-     }
+        "Directive": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Report Id": "INT"
+        },
+        "Invoice": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Issue Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Payment Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Issuer Id": "INT",
+            "Currency": "VARCHAR(5)",
+            "Total Amount": "DECIMAL(12, 2) NOT NULL",
+            "Tax Amount": "DECIMAL(12, 2) NOT NULL",
+            "Issuer Name": "VARCHAR(255)",
+            "Recipient Id": "INT",
+            "Recipient Name": "VARCHAR(255)",
+            "Payment Status": "TINYINT(1)"
+        },
+        "Invoice Expanded": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Inventory Id": "INT",
+            "Consumable Id": "INT",
+            "Invoice Id": "INT"
+        },
+        "Prescription": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Issuer Id": "INT",
+            "Patient Id": "INT",
+            "Invoice Id": "INT"
+        },
+        "Prescription Expanded": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Consumable Id": "INT",
+            "Prescription Id": "INT"
+        },
+        "Consent Form": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Patient Id": "INT",
+            "Report Id": "INT",
+            "Consenter Name": "VARCHAR(255)",
+            "Consenter Profile Id": "INT"
+        },
+        "Emergency Report": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Report Id": "INT",
+            "Room Id": "INT",
+            "Schedule Id": "INT",
+            "Emergency Type": "VARCHAR(255)",
+            "Surgery Type": "VARCHAR(255)",
+            "Critical Level": "INT"
+        },
+        "Patient Medical Record": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Patient Id": "INT",
+            "Room Id": "INT",
+            "Schedule Id": "INT",
+            "Inpatient": "TINYINT(1) NOT NULL",
+            "Diagnosis": "TEXT",
+            "Treatment": "TEXT",
+            "Additional Notes": "TEXT"
+        },
+        "Lab Report": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Test  Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Result Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Patient Id": "INT",
+            "Room Id": "INT",
+            "Inventory Id": "INT",
+            "Schedule Id": "INT"
+        },
+        "Report": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Issuer Id": "INT"
+        },
+        "Insurance": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Report Id": "INT",
+            "Approval Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Policy Type": "VARCHAR(255)",
+            "Holder Profile Id": "INT",
+            "Provider Name": "VARCHAR(255)",
+            "Provider Representative Name": "VARCHAR(255)",
+            "Provider Representative Profile Id": "INT",
+            "Coverage Amount": "DECIMAL(12, 2) NOT NULL",
+            "Premium Amount": "DECIMAL(12, 2) NOT NULL",
+            "Claim Limit": "DECIMAL(12, 2)",
+            "Status": "TEXT"
+        },
+        "Attendance": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Schedule Id": "INT",
+            "Attendance": "TINYINT(1)"
+        },
+        "Contracts": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Staff Id": "INT",
+            "Report Id": "INT",
+            "Renew Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Contract Type": "VARCHAR(255)",
+            "Status": "TEXT",
+            "Department Id": "INT",
+            "Issuer Id": "INT",
+            "Signee Id": "INT",
+            "Payment Amount": "DECIMAL(12, 2) NOT NULL",
+            "Terms and Conditions Link": "TEXT NOT NULL"
+        },
+        "Meeting Minutes": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Agenda": "TEXT",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Staff Id": "INT",
+            "Report Id": "INT",
+            "Room Id": "INT",
+            "Schedule Id": "INT"
+        },
+        "Medical Equipment Logs": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Staff Id": "INT",
+            "Patient Id": "INT",
+            "Report Id": "INT",
+            "Room Id": "INT",
+            "Inventory Id": "INT",
+            "Schedule Id": "INT"
+        },
+        "Maintenance Logs": {
+            "Id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "Name": "VARCHAR(255)",
+            "Document Link": "TEXT NOT NULL",
+            "Approved By Id": "INT NOT NULL",
+            "Description": "TEXT",
+            "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
+            "Staff Id": "INT",
+            "Report Id": "INT",
+            "Room Id": "INT",
+            "Inventory Id": "INT",
+            "Schedule Id": "INT"
+        }
     }
-   }
+}

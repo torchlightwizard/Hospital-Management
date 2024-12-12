@@ -25,8 +25,7 @@
    "Patient Id": "",
    "Inventory Id": "",
    "Executive Level": "",
-   "Department Id": "",
-   "": ""
+   "Department Id": ""
   },
   "Doctor": {
    "Id": "",
@@ -188,7 +187,7 @@
  "Inventory": {
   "Inventory": {
    "Id": "",
-   "Edibles Id": "",
+   "Edible Id": "",
    "Medical Equipment Id": "",
    "Supplies Id": "",
    "Electronic Id": "",
@@ -200,7 +199,7 @@
    "Purchase Date": "",
    "Expiration Date": "",
    "Quantity": "",
-   "Kitchen Id": ""
+   "Room Id": ""
   },
   "Medical Equipment": {
    "Id": "",
@@ -267,7 +266,7 @@
    "Invoice Id": "",
    "Department Id": "",
    "Approved By Id": "",
-   "Cashflow Id": ""
+   "Cash Flow Id": ""
   },
   "Compensations": {
    "Id": "",
@@ -278,7 +277,7 @@
    "Invoice Id": "",
    "Staff Id": "",
    "Approved By Id": "",
-   "Cashflow Id": ""
+   "Cash Flow Id": ""
   },
   "Revenue": {
    "Id": "",
@@ -288,7 +287,7 @@
    "Type": "",
    "Invoice Id": "",
    "Department Id": "",
-   "Cashflow Id": ""
+   "Cash Flow Id": ""
   },
   "Cash Flow": {
    "Id": "",
@@ -342,18 +341,18 @@
    "Id": "",
    "Director Id": "",
    "Administration Id": "",
-   "Doctors Id": "",
-   "Nurses Id": "",
-   "Medical Technicians Id": "",
-   "Therapists Id": "",
+   "Doctor Id": "",
+   "Nurse Id": "",
+   "Medical Technician Id": "",
+   "Therapist Id": "",
    "Clinical Support Id": "",
    "Non-Medical Support Id": "",
    "Pharmacy Id": "",
    "Transport Id": "",
-   "Teachers Id": "",
-   "Volunteers Id": ""
+   "Teacher Id": "",
+   "Volunteer Id": ""
   },
-  "Directors": {
+  "Director": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -372,7 +371,7 @@
    "End Date": "",
    "Medical": ""
   },
-  "Doctors": {
+  "Doctor": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -384,7 +383,7 @@
    "Licenses": "",
    "Specializations": ""
   },
-  "Nurses": {
+  "Nurse": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -395,7 +394,7 @@
    "Licenses": "",
    "Trainings": ""
   },
-  "Medical Technicians": {
+  "Medical Technician": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -405,7 +404,7 @@
    "End Date": "",
    "Licenses": ""
   },
-  "Therapists": {
+  "Therapist": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -455,7 +454,7 @@
    "End Date": "",
    "Licenses": ""
   },
-  "Teachers": {
+  "Teacher": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -467,7 +466,7 @@
    "Trainings": "",
    "Specializations": ""
   },
-  "Volunteers": {
+  "Volunteer": {
    "Id": "",
    "Profile Id": "",
    "Position Id": "",
@@ -489,19 +488,19 @@
    "Email": ""
   }
  },
- "Patients": {
+ "Patient": {
   "Patient": {
    "Id": "",
    "Profile Id": "",
    "Inpatient": ""
   },
-  "Consent Forms": {
+  "Consent Form": {
    "Id": "",
    "Patient Id": "",
    "Date": "",
    "Consent Form Id": ""
   },
-  "Prescriptions": {
+  "Prescription": {
    "Id": "",
    "Patient Id": "",
    "Date": "",
@@ -513,13 +512,13 @@
    "Date": "",
    "Invoice Id": ""
   },
-  "Lab Reports": {
+  "Lab Report": {
    "Id": "",
    "Patient Id": "",
    "Date": "",
-   "Lap Report Id": ""
+   "Lab Report Id": ""
   },
-  "Medical Records": {
+  "Medical Record": {
    "Id": "",
    "Patient Id": "",
    "Date": "",
@@ -543,7 +542,7 @@
    "Shift Id": "",
    "Staff Id": "",
    "General Id": "",
-   "Appointments Id": "",
+   "Appointment Id": "",
    "Emergency Id": "",
    "Maintenance Id": "",
    "Vahicle Id": ""
@@ -553,7 +552,7 @@
    "Room Id": "",
    "Patient Id": ""
   },
-  "Appointments": {
+  "Appointment": {
    "Id": "",
    "Room Id": "",
    "Patient Id": ""
@@ -570,12 +569,12 @@
   },
   "Vehicle": {
    "Id": "",
-   "Purpose": "",
-   "Inventory Id": ""
+   "Inventory Id": "",
+   "Purpose": ""
   }
  },
  "Document": {
-  "Directives": {
+  "Directive": {
    "Id": "",
    "Name": "",
    "Document Link": "",
@@ -623,7 +622,7 @@
    "Consumable Id": "",
    "Prescription Id": ""
   },
-  "Consent Forms": {
+  "Consent Form": {
    "Id": "",
    "Name": "",
    "Document Link": "",
@@ -635,7 +634,7 @@
    "Consenter Name": "",
    "Consenter Profile Id": ""
   },
-  "Emergency Reports": {
+  "Emergency Report": {
    "Id": "",
    "Name": "",
    "Document Link": "",
@@ -652,7 +651,7 @@
    "Surgery Type": "",
    "Critical Level": ""
   },
-  "Patient Medical Records": {
+  "Patient Medical Record": {
    "Id": "",
    "Document Link": "",
    "Approved By Id": "",
