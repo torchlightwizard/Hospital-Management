@@ -26,7 +26,7 @@ def processCols(schema, table, col):
 
     if (col.split(" ")[-1] == "Id") and (len(col.split(" ")) > 1):
         ref_table = " ".join(col.split(" ")[:-1]).strip()
-        return f"\t\"{col}\" {content[schema][table][col]}, FOREIGN KEY (\"{col}\") REFERENCES `{ref_table}`(Id),"
+        return f"\t\"{col}\" {content[schema][table][col]}, FOREIGN KEY (\"{col}\") REFERENCES `INPUT_SCHEMA_PREFIX {ref_table}`(Id),"
     return f"\t\"{col}\" {content[schema][table][col]},"
 
 with open(input_path) as file:
