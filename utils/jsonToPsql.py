@@ -5,51 +5,33 @@ output_path_db = "../design/queries/postgresql/query_create_db.sql"
 output_path_schema = "../design/queries/postgresql/query_create_schema.sql"
 output_path_table = "../design/queries/postgresql/query_create_table.sql"
 
-def processCols(schema, table, col):
-    """
-        Description:
-            1. Adds the query : "ColumnName" DATATYPE CONSTRAINT
-               to each column of table
-            2. Checks if a foreign key is needed or not.
-               The check is made using the "Id" keyword in the column name.
-
-        Args:
-            schema: <str>
-                Name of schema to put the table and its columns into
-            table: <str>
-                Name of table
-            col: <str>
-                Name of column to
-                1. put into format "ColumnName" DATATYPE CONSTRAINT
-                2. check if needs foreign key constraints
-    """
-
-    if (col.split(" ")[-1] == "Id") and (len(col.split(" ")) > 1):
-        ref_table = " ".join(col.split(" ")[:-1]).strip()
-        return f"\t\"{col}\" {content[schema][table][col]}, FOREIGN KEY (\"{col}\") REFERENCES \"INPUT_SCHEMA_PREFIX\".\"{ref_table}\"(Id),"
-    return f"\t\"{col}\" {content[schema][table][col]},"
-
 with open(input_path) as file:
     content = file.read()
 content = json.loads(content)
 
-create_db = "CREATE DATABASE \"{}\" \n\tWITH \n\tENCODING = \"UTF8\" \n\tLC_COLLATE = \"en_US.utf8\" \n\tLC_CTYPE = \"en_US.utf8\";"
+create_db = "CREATE DATABASE \"{}\" \n\tWITH \n\tENCODING = \"UTF8\" \n\tLC_COLLATE = \"English_Pakistan.1252\" \n\tLC_CTYPE = \"English_Pakistan.1252\";"
 create_schema = "CREATE SCHEMA \"{}\";"
 create_table = "CREATE TABLE \"{}\".\"{}\" (\n{}\n);\n"
 
+# 1. create db query
 with open(output_path_db, "w") as file:
     query = create_db.format("hospital management")
     file.write(query)
 
+# 2. create schema query
 with open(output_path_schema, "w") as file:
     schemas = [create_schema.format(schema) for schema in content.keys()]
     query = "\n".join(schemas)
     file.write(query)
 
+# 3. create table query
 with open(output_path_table, "w") as file:
     query = ""
     for schema in content.keys():
         for table in content[schema].keys():
-            cols = [processCols(schema, table, col) for col in content[schema][table]]
-            query = query + create_table.format(schema, table, "\n".join(cols))
+            query = query + create_table.format(schema, table, "\"Id\" " + content[schema][table]["Id"])
     file.write(query)
+
+# 4. create columns for each table
+
+# 5. create relations for each table
