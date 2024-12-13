@@ -70,7 +70,7 @@ Patient:
 
 Schedule:
  - Shift: [       Id, Start Date, End Date, Description, Shift Name]
- - Schedule: [    Id, Start Date, End Date, Description, Name, Shift Id, Staff Id, General Id, Appointment Id, Emergency Id, Maintenance Id, Vahicle Id]
+ - Schedule: [    Id, Start Date, End Date, Description, Name, Shift Id, Staff Id, General Id, Appointment Id, Emergency Id, Maintenance Id, Vehicle Id]
  - General: [     Id, Room Id, Patient Id]
  - Appointment: [ Id, Room Id, Patient Id]
  - Emergency: [   Id, Room Id, Patient Id]

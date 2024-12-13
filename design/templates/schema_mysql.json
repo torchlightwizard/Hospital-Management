@@ -39,7 +39,7 @@
             "Name": "VARCHAR(255)",
             "Floor": "INT",
             "Capacity": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT",
@@ -51,11 +51,11 @@
             "Name": "VARCHAR(255)",
             "Floor": "INT",
             "Capacity": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT",
-            "Intensive Care": "TINYINT(1)",
+            "Intensive Care": "BIT",
             "Description": "TEXT"
         },
         "Outpatient": {
@@ -63,7 +63,7 @@
             "Name": "VARCHAR(255)",
             "Floor": "INT",
             "Capacity": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT"
@@ -73,7 +73,7 @@
             "Name": "VARCHAR(255)",
             "Floor": "INT",
             "Capacity": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT",
@@ -84,12 +84,12 @@
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
             "Name": "VARCHAR(255)",
             "Floor": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT",
             "Surgery Type": "VARCHAR(255)",
-            "Attached Teaching Area": "TINYINT(1)"
+            "Attached Teaching Area": "BIT"
         },
         "Treatment": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
@@ -99,7 +99,7 @@
             "Staff Id": "INT",
             "Patient Id": "INT",
             "Inventory Id": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Facilities List": "JSON"
         },
         "Support": {
@@ -207,7 +207,7 @@
             "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Room Id": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Maintenance Schedule Id": "INT",
             "Maintenance Logs Id": "INT"
         },
@@ -224,14 +224,14 @@
             "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Expiration Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Room Id": "INT",
-            "Medical": "TINYINT(1)"
+            "Medical": "BIT"
         },
         "Vehicle": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
             "Type": "VARCHAR(255)",
             "Purchase Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Room Id": "INT",
-            "Availability": "TINYINT(1)",
+            "Availability": "BIT",
             "Maintenance Schedule Id": "INT",
             "Maintenance Logs Id": "INT",
             "Model": "TEXT",
@@ -357,7 +357,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
         },
@@ -366,17 +366,17 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
-            "Medical": "TINYINT(1)"
+            "Medical": "BIT"
         },
         "Doctor": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Qualifications": "JSON",
@@ -388,7 +388,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Licenses": "JSON",
@@ -399,7 +399,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Licenses": "JSON"
@@ -409,7 +409,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Qualifications": "JSON",
@@ -420,7 +420,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Licenses": "JSON"
@@ -430,7 +430,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
         },
@@ -439,7 +439,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Licenses": "JSON"
@@ -449,7 +449,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Licenses": "JSON"
@@ -459,7 +459,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Qualifications": "JSON",
@@ -471,7 +471,7 @@
             "Profile Id": "INT",
             "Position Id": "INT",
             "Attendance Id": "INT",
-            "Active": "TINYINT(1)",
+            "Active": "BIT",
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL"
         }
@@ -492,7 +492,7 @@
         "Patient": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
             "Profile Id": "INT",
-            "Inpatient": "TINYINT(1) NOT NULL"
+            "Inpatient": "BIT NOT NULL"
         },
         "Consent Form": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
@@ -545,7 +545,7 @@
             "Appointment Id": "INT",
             "Emergency Id": "INT",
             "Maintenance Id": "INT",
-            "Vahicle Id": "INT"
+            "Vehicle Id": "INT"
         },
         "General": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
@@ -599,7 +599,7 @@
             "Issuer Name": "VARCHAR(255)",
             "Recipient Id": "INT",
             "Recipient Name": "VARCHAR(255)",
-            "Payment Status": "TINYINT(1)"
+            "Payment Status": "BIT"
         },
         "Invoice Expanded": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",
@@ -660,7 +660,7 @@
             "Patient Id": "INT",
             "Room Id": "INT",
             "Schedule Id": "INT",
-            "Inpatient": "TINYINT(1) NOT NULL",
+            "Inpatient": "BIT NOT NULL",
             "Diagnosis": "TEXT",
             "Treatment": "TEXT",
             "Additional Notes": "TEXT"
@@ -714,7 +714,7 @@
             "Start Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "End Date": "DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Schedule Id": "INT",
-            "Attendance": "TINYINT(1)"
+            "Attendance": "BIT"
         },
         "Contracts": {
             "Id": "INT AUTO_INCREMENT PRIMARY KEY",

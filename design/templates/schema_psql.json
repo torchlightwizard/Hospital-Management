@@ -545,7 +545,7 @@
             "Appointment Id": "SERIAL",
             "Emergency Id": "SERIAL",
             "Maintenance Id": "SERIAL",
-            "Vahicle Id": "SERIAL"
+            "Vehicle Id": "SERIAL"
         },
         "General": {
             "Id": "SERIAL PRIMARY KEY",
