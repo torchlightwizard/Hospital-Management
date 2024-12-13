@@ -208,8 +208,8 @@
             "Expiration Date": "TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Room Id": "SERIAL",
             "Availability": "BOOLEAN",
-            "MaINTEGERenance Schedule Id": "SERIAL",
-            "MaINTEGERenance Logs Id": "SERIAL"
+            "Maintenance Schedule Id": "SERIAL",
+            "Maintenance Logs Id": "SERIAL"
         },
         "Supplies": {
             "Id": "SERIAL PRIMARY KEY",
@@ -232,8 +232,8 @@
             "Purchase Date": "TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL",
             "Room Id": "SERIAL",
             "Availability": "BOOLEAN",
-            "MaINTEGERenance Schedule Id": "SERIAL",
-            "MaINTEGERenance Logs Id": "SERIAL",
+            "Maintenance Schedule Id": "SERIAL",
+            "Maintenance Logs Id": "SERIAL",
             "Model": "TEXT",
             "Purpose": "VARCHAR(255)",
             "Capacity": "INTEGER"
@@ -542,9 +542,9 @@
             "Shift Id": "SERIAL",
             "Staff Id": "SERIAL",
             "General Id": "SERIAL",
-            "AppoINTEGERment Id": "SERIAL",
+            "Appointment Id": "SERIAL",
             "Emergency Id": "SERIAL",
-            "MaINTEGERenance Id": "SERIAL",
+            "Maintenance Id": "SERIAL",
             "Vahicle Id": "SERIAL"
         },
         "General": {
@@ -552,7 +552,7 @@
             "Room Id": "SERIAL",
             "Patient Id": "SERIAL"
         },
-        "AppoINTEGERment": {
+        "Appointment": {
             "Id": "SERIAL PRIMARY KEY",
             "Room Id": "SERIAL",
             "Patient Id": "SERIAL"
@@ -562,7 +562,7 @@
             "Room Id": "SERIAL",
             "Patient Id": "SERIAL"
         },
-        "MaINTEGERenance": {
+        "Maintenance": {
             "Id": "SERIAL PRIMARY KEY",
             "Room Id": "SERIAL",
             "Inventory Id": "SERIAL"
@@ -762,7 +762,7 @@
             "Inventory Id": "SERIAL",
             "Schedule Id": "SERIAL"
         },
-        "MaINTEGERenance Logs": {
+        "Maintenance Logs": {
             "Id": "SERIAL PRIMARY KEY",
             "Name": "VARCHAR(255)",
             "Document Link": "TEXT NOT NULL",

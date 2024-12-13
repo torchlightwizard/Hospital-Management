@@ -20,7 +20,7 @@ CREATE TABLE "Room Administrative" (
 	"Name" VARCHAR(255),
 	"Floor" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Executive Level" INT,
 	"Department Id" INT, FOREIGN KEY ("Department Id") REFERENCES `Management Department`(Id),
@@ -29,7 +29,7 @@ CREATE TABLE "Room Doctor" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Floor" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Emergency" (
@@ -39,7 +39,7 @@ CREATE TABLE "Room Emergency" (
 	"Capacity" INT,
 	"Availability" TINYINT(1),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Critical Level" INT,
 	"Description" TEXT,
@@ -51,7 +51,7 @@ CREATE TABLE "Room Inpatient" (
 	"Capacity" INT,
 	"Availability" TINYINT(1),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Intensive Care" TINYINT(1),
 	"Description" TEXT,
@@ -63,7 +63,7 @@ CREATE TABLE "Room Outpatient" (
 	"Capacity" INT,
 	"Availability" TINYINT(1),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Diagnosis" (
@@ -73,7 +73,7 @@ CREATE TABLE "Room Diagnosis" (
 	"Capacity" INT,
 	"Availability" TINYINT(1),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Facilities List" JSON,
 	"Description" TEXT,
@@ -84,7 +84,7 @@ CREATE TABLE "Room Surgical" (
 	"Floor" INT,
 	"Availability" TINYINT(1),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Surgery Type" VARCHAR(255),
 	"Attached Teaching Area" TINYINT(1),
@@ -95,7 +95,7 @@ CREATE TABLE "Room Treatment" (
 	"Floor" INT,
 	"Capacity" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Availability" TINYINT(1),
 	"Facilities List" JSON,
@@ -106,14 +106,14 @@ CREATE TABLE "Room Support" (
 	"Floor" INT,
 	"Capacity" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Pharmacy" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Floor" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Residential" (
@@ -122,7 +122,7 @@ CREATE TABLE "Room Residential" (
 	"Floor" INT,
 	"Capacity" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Visitor" (
@@ -131,7 +131,7 @@ CREATE TABLE "Room Visitor" (
 	"Floor" INT,
 	"Capacity" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 );
 CREATE TABLE "Room Utility" (
@@ -140,7 +140,7 @@ CREATE TABLE "Room Utility" (
 	"Floor" INT,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
-	"Utility Type" VARCHAR(255),
+	"Utility Type" INT,
 	"Utility Output Unit" DECIMAL(5, 2),
 );
 CREATE TABLE "Room Misc" (
@@ -148,7 +148,7 @@ CREATE TABLE "Room Misc" (
 	"Name" VARCHAR(255),
 	"Type" VARCHAR(255),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
 	"Capacity" INT,
 	"Area Unit" DECIMAL(5, 2),
@@ -181,7 +181,7 @@ CREATE TABLE "Consumable Medical Supplies" (
 );
 CREATE TABLE "Inventory Inventory" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Edibles Id" INT, FOREIGN KEY ("Edibles Id") REFERENCES `Inventory Edibles`(Id),
+	"Edible Id" INT, FOREIGN KEY ("Edible Id") REFERENCES `Inventory Edible`(Id),
 	"Medical Equipment Id" INT, FOREIGN KEY ("Medical Equipment Id") REFERENCES `Inventory Medical Equipment`(Id),
 	"Supplies Id" INT, FOREIGN KEY ("Supplies Id") REFERENCES `Inventory Supplies`(Id),
 	"Electronic Id" INT, FOREIGN KEY ("Electronic Id") REFERENCES `Inventory Electronic`(Id),
@@ -202,8 +202,8 @@ CREATE TABLE "Inventory Medical Equipment" (
 	"Expiration Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Availability" TINYINT(1),
-	"Maintenance Schedule Id" INT NOT NULL, FOREIGN KEY ("Maintenance Schedule Id") REFERENCES `Maintenance Schedule`(Id),
-	"Maintenance Logs Id" INT, FOREIGN KEY ("Maintenance Logs Id") REFERENCES `Maintenance Logs`(Id),
+	"Maintenance Schedule Id" INT, FOREIGN KEY ("Maintenance Schedule Id") REFERENCES `Schedule Maintenance`(Id),
+	"Maintenance Logs Id" INT, FOREIGN KEY ("Maintenance Logs Id") REFERENCES `Document Maintenance Logs`(Id),
 );
 CREATE TABLE "Inventory Supplies" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -226,8 +226,8 @@ CREATE TABLE "Inventory Vehicle" (
 	"Purchase Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Availability" TINYINT(1),
-	"Maintenance Schedule Id" INT NOT NULL, FOREIGN KEY ("Maintenance Schedule Id") REFERENCES ``(Id),
-	"Maintenance Logs Id" INT, FOREIGN KEY ("Maintenance Logs Id") REFERENCES `Maintenance Logs`(Id),
+	"Maintenance Schedule Id" INT, FOREIGN KEY ("Maintenance Schedule Id") REFERENCES `Schedule Maintenance`(Id),
+	"Maintenance Logs Id" INT, FOREIGN KEY ("Maintenance Logs Id") REFERENCES `Document Maintenance Logs`(Id),
 	"Model" TEXT,
 	"Purpose" VARCHAR(255),
 	"Capacity" INT,
@@ -255,10 +255,10 @@ CREATE TABLE "Budget Expense" (
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Description" TEXT,
 	"Type" VARCHAR(255),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 	"Department Id" INT, FOREIGN KEY ("Department Id") REFERENCES `Management Department`(Id),
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
-	"Cashflow Id" INT, FOREIGN KEY ("Cashflow Id") REFERENCES `Cashflow`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
+	"Cash Flow Id" INT, FOREIGN KEY ("Cash Flow Id") REFERENCES `Budget Cash Flow`(Id),
 );
 CREATE TABLE "Budget Compensations" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -266,10 +266,10 @@ CREATE TABLE "Budget Compensations" (
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Description" TEXT,
 	"Type" VARCHAR(255),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
-	"Cashflow Id" INT, FOREIGN KEY ("Cashflow Id") REFERENCES `Cashflow`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
+	"Cash Flow Id" INT, FOREIGN KEY ("Cash Flow Id") REFERENCES `Budget Cash Flow`(Id),
 );
 CREATE TABLE "Budget Revenue" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -277,9 +277,9 @@ CREATE TABLE "Budget Revenue" (
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Description" TEXT,
 	"Type" VARCHAR(255),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 	"Department Id" INT, FOREIGN KEY ("Department Id") REFERENCES `Management Department`(Id),
-	"Cashflow Id" INT, FOREIGN KEY ("Cashflow Id") REFERENCES `Cashflow`(Id),
+	"Cash Flow Id" INT, FOREIGN KEY ("Cash Flow Id") REFERENCES `Budget Cash Flow`(Id),
 );
 CREATE TABLE "Budget Cash Flow" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -287,8 +287,8 @@ CREATE TABLE "Budget Cash Flow" (
 	"Balance" DECIMAL(12, 2) NOT NULL,
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Type" VARCHAR(255),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
-	"Record Editor Id" INT, FOREIGN KEY ("Record Editor Id") REFERENCES `Record Editor`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
+	"Record Editor Id" INT, FOREIGN KEY ("Record Editor Id") REFERENCES `Staff Staff`(Id),
 	"Flow" VARCHAR(255),
 );
 CREATE TABLE "Management Board" (
@@ -306,7 +306,7 @@ CREATE TABLE "Management Research Team" (
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Department Id" INT, FOREIGN KEY ("Department Id") REFERENCES `Management Department`(Id),
 );
 CREATE TABLE "Management Department" (
@@ -327,43 +327,43 @@ CREATE TABLE "Management Position" (
 );
 CREATE TABLE "Staff Staff" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Director Id" INT, FOREIGN KEY ("Director Id") REFERENCES `Director`(Id),
-	"Administration Id" INT, FOREIGN KEY ("Administration Id") REFERENCES `Administration`(Id),
-	"Doctors Id" INT, FOREIGN KEY ("Doctors Id") REFERENCES `Doctors`(Id),
-	"Nurses Id" INT, FOREIGN KEY ("Nurses Id") REFERENCES `Nurses`(Id),
-	"Medical Technicians Id" INT, FOREIGN KEY ("Medical Technicians Id") REFERENCES `Medical Technicians`(Id),
-	"Therapists Id" INT, FOREIGN KEY ("Therapists Id") REFERENCES `Therapists`(Id),
-	"Clinical Support Id" INT, FOREIGN KEY ("Clinical Support Id") REFERENCES `Clinical Support`(Id),
-	"Non-Medical Support Id" INT, FOREIGN KEY ("Non-Medical Support Id") REFERENCES `Non-Medical Support`(Id),
-	"Pharmacy Id" INT, FOREIGN KEY ("Pharmacy Id") REFERENCES `Room Pharmacy`(Id),
-	"Transport Id" INT, FOREIGN KEY ("Transport Id") REFERENCES `Transport`(Id),
-	"Teachers Id" INT, FOREIGN KEY ("Teachers Id") REFERENCES `Teachers`(Id),
-	"Volunteers Id" INT, FOREIGN KEY ("Volunteers Id") REFERENCES `Volunteers`(Id),
+	"Director Id" INT, FOREIGN KEY ("Director Id") REFERENCES `Staff Director`(Id),
+	"Administration Id" INT, FOREIGN KEY ("Administration Id") REFERENCES `Staff Administration`(Id),
+	"Doctor Id" INT, FOREIGN KEY ("Doctor Id") REFERENCES `Staff Doctor`(Id),
+	"Nurse Id" INT, FOREIGN KEY ("Nurse Id") REFERENCES `Staff Nurse`(Id),
+	"Medical Technician Id" INT, FOREIGN KEY ("Medical Technician Id") REFERENCES `Staff Medical Technician`(Id),
+	"Therapist Id" INT, FOREIGN KEY ("Therapist Id") REFERENCES `Staff Therapist`(Id),
+	"Clinical Support Id" INT, FOREIGN KEY ("Clinical Support Id") REFERENCES `Staff Clinical Support`(Id),
+	"Non-Medical Support Id" INT, FOREIGN KEY ("Non-Medical Support Id") REFERENCES `Staff Non-Medical Support`(Id),
+	"Pharmacy Id" INT, FOREIGN KEY ("Pharmacy Id") REFERENCES `Staff Pharmacy`(Id),
+	"Transport Id" INT, FOREIGN KEY ("Transport Id") REFERENCES `Staff Transport`(Id),
+	"Teacher Id" INT, FOREIGN KEY ("Teacher Id") REFERENCES `Staff Teacher`(Id),
+	"Volunteer Id" INT, FOREIGN KEY ("Volunteer Id") REFERENCES `Staff Volunteer`(Id),
 );
-CREATE TABLE "Staff Directors" (
+CREATE TABLE "Staff Director" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 );
 CREATE TABLE "Staff Administration" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Medical" TINYINT(1),
 );
-CREATE TABLE "Staff Doctors" (
+CREATE TABLE "Staff Doctor" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -371,32 +371,32 @@ CREATE TABLE "Staff Doctors" (
 	"Licenses" JSON,
 	"Specializations" JSON,
 );
-CREATE TABLE "Staff Nurses" (
+CREATE TABLE "Staff Nurse" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Licenses" JSON,
 	"Trainings" JSON,
 );
-CREATE TABLE "Staff Medical Technicians" (
+CREATE TABLE "Staff Medical Technician" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Licenses" JSON,
 );
-CREATE TABLE "Staff Therapists" (
+CREATE TABLE "Staff Therapist" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -405,9 +405,9 @@ CREATE TABLE "Staff Therapists" (
 );
 CREATE TABLE "Staff Clinical Support" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -415,18 +415,18 @@ CREATE TABLE "Staff Clinical Support" (
 );
 CREATE TABLE "Staff Non-Medical Support" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 );
 CREATE TABLE "Staff Pharmacy" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -434,19 +434,19 @@ CREATE TABLE "Staff Pharmacy" (
 );
 CREATE TABLE "Staff Transport" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Licenses" JSON,
 );
-CREATE TABLE "Staff Teachers" (
+CREATE TABLE "Staff Teacher" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -454,11 +454,11 @@ CREATE TABLE "Staff Teachers" (
 	"Trainings" JSON,
 	"Specializations" JSON,
 );
-CREATE TABLE "Staff Volunteers" (
+CREATE TABLE "Staff Volunteer" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
-	"Position Id" INT NOT NULL, FOREIGN KEY ("Position Id") REFERENCES `Position`(Id),
-	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Attendance`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
+	"Position Id" INT, FOREIGN KEY ("Position Id") REFERENCES `Management Position`(Id),
+	"Attendance Id" INT, FOREIGN KEY ("Attendance Id") REFERENCES `Document Attendance`(Id),
 	"Active" TINYINT(1),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -473,40 +473,40 @@ CREATE TABLE "Profile Profile" (
 	"Address 2" TEXT,
 	"Email" VARCHAR(30),
 );
-CREATE TABLE "Patients Patient" (
+CREATE TABLE "Patient Patient" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile`(Id),
+	"Profile Id" INT, FOREIGN KEY ("Profile Id") REFERENCES `Profile Profile`(Id),
 	"Inpatient" TINYINT(1) NOT NULL,
 );
-CREATE TABLE "Patients Consent Forms" (
+CREATE TABLE "Patient Consent Form" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Consent Form Id" INT, FOREIGN KEY ("Consent Form Id") REFERENCES `Consent Form`(Id),
+	"Consent Form Id" INT, FOREIGN KEY ("Consent Form Id") REFERENCES `Document Consent Form`(Id),
 );
-CREATE TABLE "Patients Prescriptions" (
+CREATE TABLE "Patient Prescription" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 );
-CREATE TABLE "Patients Invoice" (
+CREATE TABLE "Patient Invoice" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 );
-CREATE TABLE "Patients Lab Reports" (
+CREATE TABLE "Patient Lab Report" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Lap Report Id" INT, FOREIGN KEY ("Lap Report Id") REFERENCES `Lap Report`(Id),
+	"Lab Report Id" INT, FOREIGN KEY ("Lab Report Id") REFERENCES `Document Lab Report`(Id),
 );
-CREATE TABLE "Patients Medical Records" (
+CREATE TABLE "Patient Medical Record" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Medical Record Id" INT NOT NULL, FOREIGN KEY ("Medical Record Id") REFERENCES `Medical Record`(Id),
+	"Medical Record Id" INT, FOREIGN KEY ("Medical Record Id") REFERENCES `Document Patient Medical Record`(Id),
 );
 CREATE TABLE "Schedule Shift" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -521,28 +521,28 @@ CREATE TABLE "Schedule Schedule" (
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Description" TEXT,
 	"Name" VARCHAR(255),
-	"Shift Id" INT, FOREIGN KEY ("Shift Id") REFERENCES `Shift`(Id),
+	"Shift Id" INT, FOREIGN KEY ("Shift Id") REFERENCES `Schedule Shift`(Id),
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"General Id" INT, FOREIGN KEY ("General Id") REFERENCES `General`(Id),
-	"Appointments Id" INT, FOREIGN KEY ("Appointments Id") REFERENCES `Appointments`(Id),
-	"Emergency Id" INT, FOREIGN KEY ("Emergency Id") REFERENCES `Emergency`(Id),
-	"Maintenance Id" INT, FOREIGN KEY ("Maintenance Id") REFERENCES `Maintenance`(Id),
-	"Vahicle Id" INT, FOREIGN KEY ("Vahicle Id") REFERENCES `Vahicle`(Id),
+	"General Id" INT, FOREIGN KEY ("General Id") REFERENCES `Schedule General`(Id),
+	"Appointment Id" INT, FOREIGN KEY ("Appointment Id") REFERENCES `Schedule Appointment`(Id),
+	"Emergency Id" INT, FOREIGN KEY ("Emergency Id") REFERENCES `Schedule Emergency`(Id),
+	"Maintenance Id" INT, FOREIGN KEY ("Maintenance Id") REFERENCES `Schedule Maintenance`(Id),
+	"Vahicle Id" INT, FOREIGN KEY ("Vahicle Id") REFERENCES `Schedule Vahicle`(Id),
 );
 CREATE TABLE "Schedule General" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 );
-CREATE TABLE "Schedule Appointments" (
+CREATE TABLE "Schedule Appointment" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 );
 CREATE TABLE "Schedule Emergency" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 );
 CREATE TABLE "Schedule Maintenance" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
@@ -551,95 +551,95 @@ CREATE TABLE "Schedule Maintenance" (
 );
 CREATE TABLE "Schedule Vehicle" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Purpose" VARCHAR(255),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
+	"Purpose" VARCHAR(255),
 );
-CREATE TABLE "Document Directives" (
+CREATE TABLE "Document Directive" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 );
 CREATE TABLE "Document Invoice" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Issue Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Payment Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Issuer`(Id),
+	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Profile Profile`(Id),
 	"Currency" VARCHAR(5),
 	"Total Amount" DECIMAL(12, 2) NOT NULL,
 	"Tax Amount" DECIMAL(12, 2) NOT NULL,
 	"Issuer Name" VARCHAR(255),
-	"Recipient Id" INT, FOREIGN KEY ("Recipient Id") REFERENCES `Recipient`(Id),
+	"Recipient Id" INT, FOREIGN KEY ("Recipient Id") REFERENCES `Profile Profile`(Id),
 	"Recipient Name" VARCHAR(255),
 	"Payment Status" TINYINT(1),
 );
 CREATE TABLE "Document Invoice Expanded" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
-	"Consumable Id" INT, FOREIGN KEY ("Consumable Id") REFERENCES `Consumable`(Id),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Consumable Id" INT, FOREIGN KEY ("Consumable Id") REFERENCES `Consumable Consumable`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 );
 CREATE TABLE "Document Prescription" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Issuer`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
-	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Invoice`(Id),
+	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Profile Profile`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Invoice Id" INT, FOREIGN KEY ("Invoice Id") REFERENCES `Document Invoice`(Id),
 );
 CREATE TABLE "Document Prescription Expanded" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
-	"Consumable Id" INT, FOREIGN KEY ("Consumable Id") REFERENCES `Consumable`(Id),
-	"Prescription Id" INT, FOREIGN KEY ("Prescription Id") REFERENCES `Prescription`(Id),
+	"Consumable Id" INT, FOREIGN KEY ("Consumable Id") REFERENCES `Consumable Consumable`(Id),
+	"Prescription Id" INT, FOREIGN KEY ("Prescription Id") REFERENCES `Document Prescription`(Id),
 );
-CREATE TABLE "Document Consent Forms" (
+CREATE TABLE "Document Consent Form" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Consenter Name" VARCHAR(255),
-	"Consenter Profile Id" INT, FOREIGN KEY ("Consenter Profile Id") REFERENCES `Consenter Profile`(Id),
+	"Consenter Profile Id" INT, FOREIGN KEY ("Consenter Profile Id") REFERENCES `Profile Profile`(Id),
 );
-CREATE TABLE "Document Emergency Reports" (
+CREATE TABLE "Document Emergency Report" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 	"Emergency Type" VARCHAR(255),
 	"Surgery Type" VARCHAR(255),
 	"Critical Level" INT,
 );
-CREATE TABLE "Document Patient Medical Records" (
+CREATE TABLE "Document Patient Medical Record" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 	"Inpatient" TINYINT(1) NOT NULL,
 	"Diagnosis" TEXT,
 	"Treatment" TEXT,
@@ -649,39 +649,39 @@ CREATE TABLE "Document Lab Report" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Test  Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Result Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 );
 CREATE TABLE "Document Report" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Issuer`(Id),
+	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Profile Profile`(Id),
 );
 CREATE TABLE "Document Insurance" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Approval Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Policy Type" VARCHAR(255),
-	"Holder Profile Id" INT, FOREIGN KEY ("Holder Profile Id") REFERENCES `Holder Profile`(Id),
+	"Holder Profile Id" INT, FOREIGN KEY ("Holder Profile Id") REFERENCES `Profile Profile`(Id),
 	"Provider Name" VARCHAR(255),
 	"Provider Representative Name" VARCHAR(255),
-	"Provider Representative Profile Id" INT, FOREIGN KEY ("Provider Representative Profile Id") REFERENCES `Provider Representative Profile`(Id),
+	"Provider Representative Profile Id" INT, FOREIGN KEY ("Provider Representative Profile Id") REFERENCES `Profile Profile`(Id),
 	"Coverage Amount" DECIMAL(12, 2) NOT NULL,
 	"Premium Amount" DECIMAL(12, 2) NOT NULL,
 	"Claim Limit" DECIMAL(12, 2),
@@ -690,28 +690,28 @@ CREATE TABLE "Document Insurance" (
 CREATE TABLE "Document Attendance" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 	"Attendance" TINYINT(1),
 );
 CREATE TABLE "Document Contracts" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Renew Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Contract Type" VARCHAR(255),
 	"Status" TEXT,
 	"Department Id" INT, FOREIGN KEY ("Department Id") REFERENCES `Management Department`(Id),
-	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Issuer`(Id),
-	"Signee Id" INT, FOREIGN KEY ("Signee Id") REFERENCES `Signee`(Id),
+	"Issuer Id" INT, FOREIGN KEY ("Issuer Id") REFERENCES `Profile Profile`(Id),
+	"Signee Id" INT, FOREIGN KEY ("Signee Id") REFERENCES `Profile Profile`(Id),
 	"Payment Amount" DECIMAL(12, 2) NOT NULL,
 	"Terms and Conditions Link" TEXT NOT NULL,
 );
@@ -719,40 +719,40 @@ CREATE TABLE "Document Meeting Minutes" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Agenda" TEXT,
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 );
 CREATE TABLE "Document Medical Equipment Logs" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Patient Id" INT NOT NULL, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Patient Id" INT, FOREIGN KEY ("Patient Id") REFERENCES `Patient Patient`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 );
 CREATE TABLE "Document Maintenance Logs" (
 	"Id" INT AUTO_INCREMENT PRIMARY KEY,
 	"Name" VARCHAR(255),
 	"Document Link" TEXT NOT NULL,
-	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Approved By`(Id),
+	"Approved By Id" INT NOT NULL, FOREIGN KEY ("Approved By Id") REFERENCES `Staff Staff`(Id),
 	"Description" TEXT,
 	"Start Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"End Date" DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"Staff Id" INT, FOREIGN KEY ("Staff Id") REFERENCES `Staff Staff`(Id),
-	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Report`(Id),
+	"Report Id" INT, FOREIGN KEY ("Report Id") REFERENCES `Document Report`(Id),
 	"Room Id" INT, FOREIGN KEY ("Room Id") REFERENCES `Room Room`(Id),
 	"Inventory Id" INT, FOREIGN KEY ("Inventory Id") REFERENCES `Inventory Inventory`(Id),
-	"Schedule Id" INT NOT NULL, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule`(Id),
+	"Schedule Id" INT, FOREIGN KEY ("Schedule Id") REFERENCES `Schedule Schedule`(Id),
 );
