@@ -2,22 +2,23 @@
 A database design for a real world hospital management system. The design will incorporate an sql database "postgresql" and visualization using "power bi".<br>
 
 The folder hierarchy is as follows:<br>
-|     |       |           |           |
-|-----|-------|-----------|-----------|
-|root/|       |           |           |
-|     |design/|           |           |
-|     |       |docs/      |           |
-|     |       |queries/   |           |
-|     |       |           |mysql/     |
-|     |       |           |postgresql/|
-|     |       |schema/    |           |
-|     |       |templates/ |           |
-|     |db/    |           |           |
-|     |       |mysql/     |           |
-|     |       |postgresql/|           |
-|     |utils/ |           |           |
+```bash
+├───design
+│   ├───docs
+│   ├───queries
+│   │   ├───mysql
+│   │   └───postgresql
+│   ├───schema
+│   └───templates
+├───db
+│   ├───mysql
+│   ├───postgresql
+└───utils
+```
 
 # Schema
+
+![Postgres Schema](design/schema/Postgres%20ERD.png)
 
 # Notes
 
